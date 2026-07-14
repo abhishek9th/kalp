@@ -35,7 +35,7 @@ export default function ExteriorGallery() {
           768: { slidesPerView: 1.8, spaceBetween: 24 },
           1200: { slidesPerView: 2.2, spaceBetween: 32 },
         }}
-        className="!px-6 !pb-16"
+        className="!px-3 !pb-16 sm:!px-6"
       >
         {EXTERIOR_GALLERY.map((g) => (
           <SwiperSlide key={g.label} className="!h-auto">

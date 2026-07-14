@@ -5,7 +5,7 @@ import { IMG, ABOUT_STATS } from '../data/kalp'
 
 export default function About() {
   return (
-    <section id="about" className="relative bg-bg py-24 sm:py-32">
+    <section id="about" className="relative bg-bg py-20 sm:py-28">
       <div className="shell grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         {/* Left — copy */}
         <div>
@@ -60,7 +60,7 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute -left-4 bottom-8 rounded-2xl bg-ink px-6 py-5 text-white shadow-lift sm:-left-8"
+            className="absolute -left-2 bottom-4 rounded-2xl bg-ink px-4 py-4 text-white shadow-lift sm:-left-8 sm:bottom-8 sm:px-6 sm:py-5"
           >
             <div className="font-display text-3xl font-extrabold">120</div>
             <div className="text-xs uppercase tracking-wide text-white/60">

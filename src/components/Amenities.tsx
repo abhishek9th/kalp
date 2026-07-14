@@ -22,7 +22,7 @@ export default function Amenities() {
       <section
         id="amenities"
         ref={ref}
-        className="relative overflow-hidden py-24 text-white sm:py-32"
+        className="relative overflow-hidden py-20 text-white sm:py-28"
       >
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(230,57,70,0.14),transparent_70%)]" />
         <div className="shell relative">
@@ -33,7 +33,7 @@ export default function Amenities() {
             subtitle="Every essential planned in from day one, so life here simply works."
           />
 
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             {AMENITIES.map((a, i) => {
               const Icon = a.icon
               return (
@@ -48,7 +48,7 @@ export default function Amenities() {
                     ease: [0.22, 1, 0.36, 1],
                   }}
                   whileHover={{ y: -6 }}
-                  className="group flex flex-col items-center gap-4 rounded-xl2 border border-white/15 bg-white/[0.06] p-6 text-center backdrop-blur-md transition-colors duration-500 hover:border-accent/40 hover:bg-white/[0.12]"
+                  className="group flex flex-col items-center gap-4 rounded-xl2 border border-white/15 bg-white/[0.06] p-4 text-center backdrop-blur-md transition-colors duration-500 hover:border-accent/40 hover:bg-white/[0.12] sm:p-6"
                 >
                   <span className="grid h-14 w-14 place-items-center rounded-full border border-white/20 text-white/90 transition-all duration-500 group-hover:border-accent group-hover:bg-accent group-hover:text-white">
                     <Icon className="h-7 w-7" strokeWidth={1.6} />

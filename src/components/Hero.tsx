@@ -51,7 +51,7 @@ export default function Hero() {
     <section
       id="home"
       ref={root}
-      className="relative flex h-svh min-h-[640px] items-center justify-center overflow-hidden bg-ink"
+      className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-ink px-4 py-20 sm:px-6"
     >
       {/* Background media — drop a client drone video into <video> when available */}
       <div ref={bg} className="absolute inset-0 will-change-transform">
@@ -77,7 +77,7 @@ export default function Hero() {
           {BRAND.location}
         </span>
 
-        <h1 className="h-display text-white text-[clamp(2.75rem,8vw,7rem)]">
+        <h1 className="h-display text-white text-[clamp(2.4rem,8vw,7rem)]">
           {['Kalp', 'Residency'].map((w) => (
             <span key={w} className="mx-2 inline-block overflow-hidden align-bottom">
               <span className="hero-word inline-block">{w}</span>
@@ -85,14 +85,14 @@ export default function Hero() {
           ))}
         </h1>
 
-        <p className="hero-sub mt-6 max-w-2xl text-balance font-alt text-lg font-medium text-white/90 sm:text-xl">
+        <p className="hero-sub mt-6 max-w-2xl text-balance font-alt text-base font-medium text-white/90 sm:text-xl">
           {BRAND.tagline}
           <span className="mt-1 block text-base font-normal text-white/65">
             Luxury living with excellent connectivity.
           </span>
         </p>
 
-        <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
+        <div className="mt-10 flex w-full flex-col items-stretch gap-3 px-2 sm:w-auto sm:flex-row sm:items-center sm:gap-4 sm:px-0">
           <div className="hero-cta">
             <MagneticButton onClick={openCTA} className="btn-primary group">
               <FiCalendar className="h-4 w-4" /> Book Site Visit

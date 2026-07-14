@@ -12,6 +12,7 @@ export default function CTAModal() {
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const [toast, setToast] = useState<Toast>(null)
+  const [submitted, setSubmitted] = useState(false)
   const [form, setForm] = useState({ name: '', phone: '' })
 
   // Open on demand (buttons) and automatically ~2.5s after every page load.
@@ -35,6 +36,16 @@ export default function CTAModal() {
       document.body.style.overflow = ''
       window.removeEventListener('keydown', onKey)
     }
+  }, [open])
+
+  useEffect(() => {
+    if (!submitted) return
+    const t = setTimeout(() => setOpen(false), 2500)
+    return () => clearTimeout(t)
+  }, [submitted])
+
+  useEffect(() => {
+    if (!open) setSubmitted(false)
   }, [open])
 
   // Auto-dismiss the toast.
@@ -64,7 +75,7 @@ export default function CTAModal() {
       if (!res.ok) throw new Error(`Request failed (${res.status})`)
 
       setForm({ name: '', phone: '' })
-      setToast({ type: 'success', msg: 'Thank you! Our team will contact you shortly.' })
+      setSubmitted(true)
     } catch {
       setToast({ type: 'error', msg: 'Something went wrong. Please try again.' })
     } finally {
@@ -118,45 +129,66 @@ export default function CTAModal() {
                 to know about Kalp Residency.
               </p>
 
-              <form onSubmit={submit} className="mt-9 space-y-4 text-left">
-                <div className="relative">
-                  <FiUser className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-white/40" />
-                  <input
-                    required
-                    aria-label="Name"
-                    placeholder="Your name"
-                    value={form.name}
-                    onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                    className="w-full rounded-xl border border-white/15 bg-white/[0.06] py-4 pl-12 pr-4 text-white outline-none transition-all placeholder:text-white/40 focus:border-accent/70 focus:ring-4 focus:ring-accent/10"
-                  />
-                </div>
-                <div className="relative">
-                  <FiPhone className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-white/40" />
-                  <input
-                    required
-                    type="tel"
-                    aria-label="Phone number"
-                    placeholder="Phone number"
-                    value={form.phone}
-                    onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
-                    className="w-full rounded-xl border border-white/15 bg-white/[0.06] py-4 pl-12 pr-4 text-white outline-none transition-all placeholder:text-white/40 focus:border-accent/70 focus:ring-4 focus:ring-accent/10"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="btn-primary w-full py-4 text-base disabled:cursor-not-allowed disabled:opacity-70"
+              {submitted ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="mt-9 rounded-3xl border border-white/10 bg-white/10 px-8 py-12 text-left"
                 >
-                  {loading ? 'Sending…' : 'Request a Callback'}
-                </button>
-              </form>
+                  <div className="flex items-center justify-center">
+                    <FiCheckCircle className="h-12 w-12 text-accent" />
+                  </div>
+                  <h3 className="mt-8 text-center text-3xl font-bold text-white">
+                    Thank you for contacting us!
+                  </h3>
+                  <p className="mt-4 text-center text-white/75">
+                    We’ll reach out to you shortly. This window will close automatically.
+                  </p>
+                </motion.div>
+              ) : (
+                <>
+                  <form onSubmit={submit} className="mt-9 space-y-4 text-left">
+                    <div className="relative">
+                      <FiUser className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-white/40" />
+                      <input
+                        required
+                        aria-label="Name"
+                        placeholder="Your name"
+                        value={form.name}
+                        onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                        className="w-full rounded-xl border border-white/15 bg-white/[0.06] py-4 pl-12 pr-4 text-white outline-none transition-all placeholder:text-white/40 focus:border-accent/70 focus:ring-4 focus:ring-accent/10"
+                      />
+                    </div>
+                    <div className="relative">
+                      <FiPhone className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-white/40" />
+                      <input
+                        required
+                        type="tel"
+                        aria-label="Phone number"
+                        placeholder="Phone number"
+                        value={form.phone}
+                        onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
+                        className="w-full rounded-xl border border-white/15 bg-white/[0.06] py-4 pl-12 pr-4 text-white outline-none transition-all placeholder:text-white/40 focus:border-accent/70 focus:ring-4 focus:ring-accent/10"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="btn-primary w-full py-4 text-base disabled:cursor-not-allowed disabled:opacity-70"
+                    >
+                      {loading ? 'Sending…' : 'Request a Callback'}
+                    </button>
+                  </form>
 
-              <button
-                onClick={() => setOpen(false)}
-                className="mt-5 text-sm text-white/45 transition hover:text-white/80"
-              >
-                Maybe later
-              </button>
+                  <button
+                    onClick={() => setOpen(false)}
+                    className="mt-5 text-sm text-white/45 transition hover:text-white/80"
+                  >
+                    Maybe later
+                  </button>
+                </>
+              )}
             </motion.div>
           </div>
 

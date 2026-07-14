@@ -14,7 +14,7 @@ export default function FloatingButtons() {
   }, [])
 
   return (
-    <div className="fixed bottom-5 right-5 z-40 flex flex-col items-center gap-3">
+    <div className="fixed bottom-4 right-4 z-40 flex flex-col items-center gap-3 sm:bottom-5 sm:right-5">
       <AnimatePresence>
         {show && (
           <motion.button
@@ -34,7 +34,7 @@ export default function FloatingButtons() {
       <a
         href={`tel:${CONTACT.tel}`}
         aria-label="Call us"
-        className="group grid h-14 w-14 place-items-center rounded-full bg-accent text-white shadow-accent transition-transform hover:-translate-y-1"
+        className="group grid h-12 w-12 place-items-center rounded-full bg-accent text-white shadow-accent transition-transform hover:-translate-y-1 sm:h-14 sm:w-14"
       >
         <span className="absolute h-14 w-14 animate-ping rounded-full bg-accent/40" />
         <FiPhone className="relative h-6 w-6" />
@@ -45,7 +45,7 @@ export default function FloatingButtons() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-lift transition-transform hover:-translate-y-1"
+        className="grid h-12 w-12 place-items-center rounded-full bg-[#25D366] text-white shadow-lift transition-transform hover:-translate-y-1 sm:h-14 sm:w-14"
       >
         <FaWhatsapp className="h-7 w-7" />
       </a>

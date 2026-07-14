@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_50%_0%,rgba(230,57,70,0.10),transparent_70%)]" />
 
       {/* CTA band */}
-      <div className="shell relative border-b border-white/10 py-16 text-center">
+      <div className="shell relative border-b border-white/10 py-12 text-center sm:py-16">
         <h2 className="h-display mx-auto max-w-3xl text-white text-[clamp(2rem,4.5vw,3.5rem)]">
           Your new address is waiting at Kalp Residency
         </h2>
@@ -29,7 +29,7 @@ export default function Footer() {
       </div>
 
       {/* Main */}
-      <div className="shell relative grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
+      <div className="shell relative grid gap-10 py-12 sm:py-16 md:grid-cols-2 lg:grid-cols-4">
         <div className="lg:col-span-1">
           <div className="flex items-center gap-2.5">
             <span className="grid h-9 w-9 place-items-center rounded-lg bg-accent font-display text-lg font-extrabold text-white">
@@ -103,7 +103,7 @@ export default function Footer() {
           </p>
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="mt-4 flex overflow-hidden rounded-full border border-white/15 bg-white/5"
+            className="mt-4 flex flex-col gap-2 overflow-hidden rounded-2xl border border-white/15 bg-white/5 p-2 sm:flex-row sm:rounded-full"
           >
             <input
               type="email"
@@ -114,7 +114,7 @@ export default function Footer() {
             <button
               type="submit"
               aria-label="Subscribe"
-              className="grid w-12 shrink-0 place-items-center bg-accent text-white transition hover:bg-accent-dark"
+              className="grid h-11 w-full shrink-0 place-items-center rounded-full bg-accent text-white transition hover:bg-accent-dark sm:w-12 sm:rounded-none"
             >
               <FiArrowUpRight className="h-4 w-4" />
             </button>

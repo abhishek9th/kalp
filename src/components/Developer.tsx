@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { FiEye, FiTarget } from 'react-icons/fi'
 import Reveal from './Reveal'
 import Img from './Img'
-import { DEVELOPER, IMG, BRAND } from '../data/kalp'
+import { DEVELOPER, BRAND } from '../data/kalp'
 
 export default function Developer() {
   return (
@@ -66,7 +66,7 @@ export default function Developer() {
         <Reveal variant="right">
           <div className="relative overflow-hidden rounded-xl3 shadow-lift">
             <Img
-              src={IMG.developer}
+              src={'/image.png'}
               alt="Landway Innovation completed projects"
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="aspect-[4/3] w-full object-cover"

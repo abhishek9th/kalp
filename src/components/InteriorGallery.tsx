@@ -51,7 +51,7 @@ export default function InteriorGallery() {
           subtitle="A closer look at the finishes, light and living spaces that define a Kalp home."
         />
 
-        <div className="grid auto-rows-[150px] grid-cols-2 gap-3 sm:auto-rows-[190px] sm:gap-4 md:grid-cols-4 [grid-auto-flow:dense]">
+        <div className="grid auto-rows-[120px] grid-cols-2 gap-2 sm:auto-rows-[190px] sm:gap-4 md:grid-cols-4 [grid-auto-flow:dense]">
           {INTERIOR_GALLERY.map((src, i) => (
             <motion.button
               key={src}

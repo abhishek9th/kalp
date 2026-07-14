@@ -8,7 +8,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="relative bg-bg py-24 sm:py-32">
+    <section id="faq" className="relative bg-bg py-20 sm:py-28">
       <div className="shell max-w-3xl">
         <SectionHeading
           eyebrow="FAQ"
@@ -32,7 +32,7 @@ export default function FAQ() {
               >
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+                  className="flex w-full items-center justify-between gap-3 px-4 py-4 text-left sm:px-6 sm:py-5"
                 >
                   <span className="font-display text-base font-bold text-ink sm:text-lg">
                     {f.q}

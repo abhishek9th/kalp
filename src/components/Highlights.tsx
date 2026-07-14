@@ -4,7 +4,7 @@ import { HIGHLIGHTS } from '../data/kalp'
 
 export default function Highlights() {
   return (
-    <section id="highlights" className="relative bg-bg py-24 sm:py-32">
+    <section id="highlights" className="relative bg-bg py-20 sm:py-28">
       <div className="shell">
         <SectionHeading
           eyebrow="Project Highlights"
@@ -26,7 +26,7 @@ export default function Highlights() {
                   delay: (i % 4) * 0.08,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="group relative overflow-hidden rounded-xl2 border border-line bg-card p-7 shadow-soft transition-all duration-500 ease-luxe hover:-translate-y-2 hover:shadow-lift"
+                className="group relative overflow-hidden rounded-xl2 border border-line bg-card p-5 shadow-soft transition-all duration-500 ease-luxe hover:-translate-y-2 hover:shadow-lift sm:p-7"
               >
                 <div className="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-bg text-ink transition-all duration-500 group-hover:bg-accent group-hover:text-white">
                   <Icon className="h-6 w-6" />

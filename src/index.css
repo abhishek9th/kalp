@@ -13,11 +13,22 @@
 
 html {
   scroll-behavior: auto; /* Lenis handles smoothing */
+  scroll-padding-top: 100px;
 }
 
 body {
-  @apply bg-bg text-text font-body;
+  @apply min-h-screen bg-bg text-text font-body;
   overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
 }
 
 /* Lenis */
@@ -53,7 +64,7 @@ html.lenis body {
 
 @layer components {
   .shell {
-    @apply mx-auto max-w-shell px-6 sm:px-10 lg:px-16;
+    @apply mx-auto max-w-shell px-4 sm:px-6 lg:px-16;
   }
   .eyebrow {
     @apply inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-luxe text-accent;

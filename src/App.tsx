@@ -21,7 +21,6 @@ import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import FloatingButtons from './components/FloatingButtons'
 import CTAModal from './components/CTAModal'
-import { IMG } from './data/kalp'
 
 export default function App() {
   useSmoothScroll()
@@ -56,7 +55,7 @@ export default function App() {
         {/* 13 */} <ConstructionQuality />
         {/* Parallax reveal 4 */}
         <ParallaxDivider
-          image={IMG.aerial}
+          image="/magic.png"
           title="Built On Trust. Delivered On Time."
           subtitle="A decade of landmark communities."
           height="h-[70vh] min-h-[420px]"

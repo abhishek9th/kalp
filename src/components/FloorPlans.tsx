@@ -9,7 +9,7 @@ export default function FloorPlans() {
   const [preview, setPreview] = useState<string | null>(null)
 
   return (
-    <section id="floor-plans" className="relative bg-bg py-24 sm:py-32">
+    <section id="floor-plans" className="relative bg-bg py-20 sm:py-28">
       <div className="shell">
         <SectionHeading
           eyebrow="Floor Plans"
@@ -47,14 +47,14 @@ export default function FloorPlans() {
                 </span>
               </div>
 
-              <div className="flex items-center justify-between gap-4 p-6">
+              <div className="flex flex-col gap-4 p-6 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <h3 className="font-display text-xl font-bold text-ink">{f.title}</h3>
                   <p className="mt-1 max-w-sm text-sm text-muted">{f.detail}</p>
                 </div>
                 <a
                   href="#book"
-                  className="group/btn flex shrink-0 items-center gap-2 rounded-full bg-bg px-4 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white"
+                  className="group/btn flex w-full shrink-0 items-center justify-center gap-2 rounded-full bg-bg px-4 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white sm:w-auto"
                 >
                   <FiDownload className="h-4 w-4" />
                   <span className="hidden sm:inline">PDF</span>
